@@ -4,7 +4,7 @@ public class MaxProfit {
 
   public static void main(String[] args) {
     MaxProfit twoSum = new MaxProfit();
-    System.out.println("maxProfix = " + twoSum.maxProfit(new int[]{7,1,5,3,6,4}));
+    System.out.println("maxProfit = " + twoSum.maxProfit(new int[]{7,1,5,3,6,4}));
   }
 
   public int maxProfitBruteForce(int[] prices) {
