@@ -5,19 +5,20 @@ import static py.com.daas.leetcode.BaseExercise.logResult;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.LinkedList;
 
 public class MaxSlidingWindow {
 
     public static void main(String[] args) {
         MaxSlidingWindow function = new MaxSlidingWindow();
-        logResult("maxSlidingWindow1", Arrays.toString(function.maxSlidingWindow1(new int[]{1, 3, -1, -3, 5, 3, 6, 7},
-                3)));
-        logResult("maxSlidingWindow", Arrays.toString(function.maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        logResult("maxSlidingWindow1", Arrays.toString(function
+                .maxSlidingWindow1(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
+        logResult("maxSlidingWindow", Arrays.toString(function
+                .maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
     }
 
     public int[] maxSlidingWindow1(int[] nums, int k) {
-        if (nums.length == 1) return nums;
+        if (nums.length == 1)
+            return nums;
 
         int i = 0;
         int resultLength = nums.length - k + 1;
