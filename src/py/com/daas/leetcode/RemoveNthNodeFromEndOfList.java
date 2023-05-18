@@ -20,16 +20,15 @@ public class RemoveNthNodeFromEndOfList {
      */
     public static void main(String[] args) {
         LinkedListUtil.ListNode head = LinkedListUtil.build(1);
-        /*LinkedListUtil.ListNode two = LinkedListUtil.build(2, head);
+        LinkedListUtil.ListNode two = LinkedListUtil.build(2, head);
         LinkedListUtil.ListNode three = LinkedListUtil.build(3, two);
         LinkedListUtil.ListNode four = LinkedListUtil.build(4, three);
-        LinkedListUtil.build(5, four);*/
+        LinkedListUtil.build(5, four);
 
         LinkedListUtil.print(head);
         RemoveNthNodeFromEndOfList exercise = new RemoveNthNodeFromEndOfList();
-        //exercise.removeNthFromEnd(head, 2);
-        exercise.removeNthFromEnd(head, 1);
-        LinkedListUtil.print(head);
+        ListNode newHead = exercise.removeNthFromEnd(head, 2);
+        LinkedListUtil.print(newHead);
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -49,6 +48,7 @@ public class RemoveNthNodeFromEndOfList {
             fast = fast.next;
             slow = slow.next;
         }
+
         slow.next = slow.next.next;
         return head;
     }
