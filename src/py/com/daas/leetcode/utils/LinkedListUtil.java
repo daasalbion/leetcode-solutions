@@ -1,6 +1,12 @@
 package py.com.daas.leetcode.utils;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class LinkedListUtil {
+
+    private LinkedListUtil() {
+    }
 
     public static class ListNode {
         public int val;
@@ -16,12 +22,29 @@ public class LinkedListUtil {
         }
     }
 
+    public static ListNode build(String strArray) {
+        List<Integer> values = strArray.trim().chars()
+                .filter(Character::isDigit)
+                .boxed()
+                .map(c -> c-'0')
+                .collect(Collectors.toList());
+        ListNode fakeHead = new ListNode(-1);
+        ListNode pointer = fakeHead;
+        for (Integer v : values) {
+            ListNode current = new ListNode(v);
+            pointer.next = current;
+            pointer = current;
+        }
+
+        return fakeHead.next;
+    }
+
     public static ListNode build(int data) {
         return new ListNode(data, null);
     }
 
     /**
-     * @param data int
+     * @param data     int
      * @param listNode node
      * @return
      */
@@ -32,10 +55,14 @@ public class LinkedListUtil {
     }
 
     public static void print(ListNode head) {
-        while(head != null) {
-            System.out.println(head.val + ", ");
+        System.out.print("[");
+        while (head != null) {
+            System.out.printf("%s", head.val);
             head = head.next;
+            if (head != null)
+                System.out.print(", ");
         }
-        System.out.println("END");
+        System.out.print("]");
+        System.out.println("");
     }
 }
