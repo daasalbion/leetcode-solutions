@@ -34,6 +34,7 @@ public class BinaryTreeLevelOrderTraversal {
                     if (treeNode.right != null) {
                         deque.add(treeNode.right);
                     }
+
                     cLevel.add(treeNode.val);
                 }
             }
