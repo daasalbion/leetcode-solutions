@@ -51,10 +51,7 @@ public class MergeSortedArray {
         // x = is the total size of num1
         // size(num1) = m + n
         // size(num2) = n
-        // m = 0 && n != 0 put elements from nums2 to nums1
-        // n = 0 && m != 0 return nums1
-        // m - 1 -> max(nums1)
-        // n - 1 -> max(nums2)
+        // size(num1) > size(num2)
         int i = m - 1; // nums1 -> 2
         int j = n - 1; // nums2 -> 2
         int x = nums1.length - 1; // nums2 -> 5
